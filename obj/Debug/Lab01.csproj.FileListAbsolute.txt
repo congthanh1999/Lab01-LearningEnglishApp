@@ -1,0 +1,11 @@
+D:\A jerry\AA C#\Lab01\bin\Debug\Lab01.exe.config
+D:\A jerry\AA C#\Lab01\bin\Debug\Lab01.exe
+D:\A jerry\AA C#\Lab01\bin\Debug\Lab01.pdb
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.csproj.AssemblyReference.cache
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.csproj.SuggestedBindingRedirects.cache
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.Properties.Resources.resources
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.csproj.GenerateResource.cache
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.csproj.CoreCompileInputs.cache
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.exe
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.pdb
+D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.Form_MainMenu.resources

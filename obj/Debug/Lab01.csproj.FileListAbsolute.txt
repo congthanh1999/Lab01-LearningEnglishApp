@@ -9,3 +9,14 @@ D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.csproj.CoreCompileInputs.cache
 D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.exe
 D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.pdb
 D:\A jerry\AA C#\Lab01\obj\Debug\Lab01.Form_MainMenu.resources
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\bin\Debug\Lab01.exe.config
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\bin\Debug\Lab01.exe
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\bin\Debug\Lab01.pdb
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.csproj.AssemblyReference.cache
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.csproj.SuggestedBindingRedirects.cache
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.Form_MainMenu.resources
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.Properties.Resources.resources
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.csproj.GenerateResource.cache
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.csproj.CoreCompileInputs.cache
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.exe
+D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.pdb

@@ -18,12 +18,19 @@ namespace Lab01
         string name;
         DateTime dateTime = new DateTime();
         DataTable dt = new DataTable();
-        int indx = 0;
 
         public Form_MainMenu()
         {
             InitializeComponent();
-            dt.Columns.Add("STT", typeof(int));
+
+            DataColumn stt = new DataColumn();
+            stt.ColumnName = "Stt";
+            stt.DataType = typeof(int);
+            stt.AutoIncrement = true;
+            stt.AutoIncrementSeed = 1;
+            stt.AutoIncrementStep = 1;
+
+            dt.Columns.Add(stt);
             dt.Columns.Add("Name", typeof(string));
             dt.Columns.Add("Score", typeof(int));
             dt.Columns.Add("Time", typeof(DateTime));
@@ -77,7 +84,7 @@ namespace Lab01
             pnl_Topics.Visible = false;
             pnl_PlayScreen.Visible = true;
 
-            string topicDir = "d:\\a jerry\\aa c#\\lab01\\images\\topics\\";
+            string topicDir = "Images\\Topics\\";
             string[] columns = b.Name.Split('_');
             string imgDir = topicDir + columns[1];
 
@@ -103,7 +110,7 @@ namespace Lab01
                 string[] result = imgPath.Split('.');
                 if (paths.Count > 0)
                 {
-                    
+
                     if (txt_Input.Text.ToLower() == result[0])
                     {
                         txt_Input.Clear();
@@ -116,7 +123,7 @@ namespace Lab01
                         txt_Input.Clear();
                         pic_NextPic_Click(sender, e);
                     }
-                    
+
                 }
                 else
                 {
@@ -159,6 +166,8 @@ namespace Lab01
         {
             pnl_MainMenu.Visible = false;
             pnl_HighScore.Visible = true;
+            SortScoreDesc();
+            PrintScore();
         }
 
         private void btn_ScoresBack_Click(object sender, EventArgs e)
@@ -169,21 +178,46 @@ namespace Lab01
 
         private void txt_EnterName_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 name = txt_EnterName.Text;
                 dateTime = DateTime.Now;
                 txt_EnterName.Clear();
                 pnl_HighScore.Visible = true;
                 pnl_EnterName.Visible = false;
-                AddData(indx, name, score, dateTime);
-                MessageBox.Show(dt.ToString());
+                AddData(name, score, dateTime);
             }
         }
 
-        private void AddData(int indx, string name, int score, DateTime dateTime)
+        private void AddData(string name, int score, DateTime dateTime)
         {
-            dt.Rows.Add(indx, name, score, dateTime);
+            dt.Rows.Add(null, name, score, dateTime);
+        }
+
+        private void PrintScore()
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                string stt = dr["Stt"].ToString();
+                string name = dr["Name"].ToString();
+                string score = dr["Score"].ToString();
+                string dateTime = dr["Time"].ToString();
+                rtb_Scores.Text += stt + name + score + dateTime + "\n";
+            }
+        }
+
+        private void SortScoreDesc()
+        {
+            dt.DefaultView.Sort = "Score DESC";
+            dt = dt.DefaultView.ToTable();
+        }
+
+        private void Form_MainMenu_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            //btn_StartGame.Location = new Point(((this.Size.Height - btn_StartGame.Location.X) / 2), ((this.Size.Height - btn_StartGame.Location.Y) / 2));
         }
     }
 }

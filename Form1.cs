@@ -217,7 +217,14 @@ namespace Lab01
             this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            //btn_StartGame.Location = new Point(((this.Size.Height - btn_StartGame.Location.X) / 2), ((this.Size.Height - btn_StartGame.Location.Y) / 2));
+
+            pnl_Buttons.Location = new Point(pnl_Buttons.Location.X, (this.Size.Height - pnl_Buttons.Size.Height) / 2);
+            pnl_WrappedTopic.Location = new Point(pnl_WrappedTopic.Location.X, (this.Size.Height - pnl_WrappedTopic.Size.Height) / 2);
+            pnl_WrappedPlayScreen.Location = new Point(pnl_WrappedPlayScreen.Location.X, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
+            pnl_WrappedScore.Location = new Point(pnl_WrappedScore.Location.X, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);
+            pnl_WrappedEnterName.Location = new Point(pnl_WrappedEnterName.Location.X, (this.Size.Height - pnl_WrappedEnterName.Size.Height) / 2);
+
+            rtb_Scores.Text += "Stt\t\tName\t\tScore\t\tTime\n";
         }
     }
 }

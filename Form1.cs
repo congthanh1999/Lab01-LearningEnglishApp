@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Lab01
 {
@@ -18,6 +20,7 @@ namespace Lab01
         string name;
         DateTime dateTime = new DateTime();
         DataTable dt = new DataTable();
+        int times = 0;
 
         public Form_MainMenu()
         {
@@ -72,6 +75,7 @@ namespace Lab01
 
         private void AddPath(string dir)
         {
+            paths.Clear();
             foreach (string path in Directory.GetFiles(dir))
             {
                 paths.Add(path);
@@ -80,7 +84,7 @@ namespace Lab01
 
         private void btn_Topic_Click(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
+            BunifuImageButton b = (BunifuImageButton)sender;
             pnl_Topics.Visible = false;
             pnl_PlayScreen.Visible = true;
 
@@ -89,66 +93,71 @@ namespace Lab01
             string imgDir = topicDir + columns[1];
 
             AddPath(imgDir);
+
             Random random = new Random();
             pic_PlayScreen.ImageLocation = paths[random.Next(0, paths.Count)];
-            paths.Remove(pic_PlayScreen.ImageLocation);
+            times++;
         }
 
         private void btn_BackToTopic_Click(object sender, EventArgs e)
         {
             pnl_PlayScreen.Visible = false;
             pnl_Topics.Visible = true;
+
+            times = 0;
             score = 0;
+
+            txt_Input.Clear();
             lbl_Score.Text = score.ToString();
         }
 
-        private void txt_Input_KeyDown(object sender, KeyEventArgs e)
+        private async void txt_Input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 string imgPath = System.IO.Path.GetFileName(pic_PlayScreen.ImageLocation);
-                string[] result = imgPath.Split('.');
-                if (paths.Count > 0)
+                string[] result = imgPath.Split('.', '-', ' ');
+                if (txt_Input.Text.ToLower() == result[0])
                 {
+                    txt_Input.Clear();
 
-                    if (txt_Input.Text.ToLower() == result[0])
-                    {
-                        txt_Input.Clear();
-                        score++;
-                        lbl_Score.Text = score.ToString();
-                        pic_NextPic_Click(sender, e);
-                    }
-                    else
-                    {
-                        txt_Input.Clear();
-                        pic_NextPic_Click(sender, e);
-                    }
+                    score += 2;
+                    lbl_Score.Text = score.ToString();
+                    pic_CorrectAnswer.Visible = true;
 
+                    await Task.Delay(1000);
+
+                    pic_CorrectAnswer.Visible = false;
+                    pic_NextPic_Click(sender, e);
                 }
                 else
                 {
-                    string message = "Your score: " + score.ToString();
-                    string title = "Result";
-                    DialogResult dr = MessageBox.Show(message, title);
-                    if (dr == DialogResult.OK)
-                    {
-                        pnl_EnterName.Visible = true;
-                        pnl_PlayScreen.Visible = false;
-                    }
+                    txt_Input.Clear();
+
+                    pic_WrongAnswer.Visible = true;
+
+                    await Task.Delay(1000);
+
+                    pic_WrongAnswer.Visible = false;
+                    pic_NextPic_Click(sender, e);
                 }
             }
         }
 
         private void pic_NextPic_Click(object sender, EventArgs e)
         {
-            if (paths.Count > 0)
+            Random random = new Random();
+            paths.Remove(pic_PlayScreen.ImageLocation);
+            if (times < 5)
             {
-                Random random = new Random();
+                times++;
                 pic_PlayScreen.ImageLocation = paths[random.Next(0, paths.Count)];
-                paths.Remove(pic_PlayScreen.ImageLocation);
             }
             else
             {
+                times = 0;
+                txt_Input.Clear();
+
                 string message = "Your score: " + score.ToString();
                 string title = "Result";
 
@@ -166,7 +175,6 @@ namespace Lab01
         {
             pnl_MainMenu.Visible = false;
             pnl_HighScore.Visible = true;
-            SortScoreDesc();
             PrintScore();
         }
 
@@ -174,6 +182,7 @@ namespace Lab01
         {
             pnl_MainMenu.Visible = true;
             pnl_HighScore.Visible = false;
+            ClearScore();
         }
 
         private void txt_EnterName_KeyDown(object sender, KeyEventArgs e)
@@ -183,27 +192,48 @@ namespace Lab01
                 name = txt_EnterName.Text;
                 dateTime = DateTime.Now;
                 txt_EnterName.Clear();
+
                 pnl_HighScore.Visible = true;
                 pnl_EnterName.Visible = false;
+
                 AddData(name, score, dateTime);
+                PrintScore();
+
+                score = 0;
+                lbl_Score.Text = score.ToString();
             }
         }
 
         private void AddData(string name, int score, DateTime dateTime)
         {
             dt.Rows.Add(null, name, score, dateTime);
+            SortScoreDesc();
         }
 
         private void PrintScore()
         {
+            int i = 0;
             foreach (DataRow dr in dt.Rows)
             {
+                i++;
                 string stt = dr["Stt"].ToString();
                 string name = dr["Name"].ToString();
                 string score = dr["Score"].ToString();
                 string dateTime = dr["Time"].ToString();
-                rtb_Scores.Text += stt + name + score + dateTime + "\n";
+
+                rtb_SttCol.Text += stt + "\n\n";
+                rtb_NameCol.Text += name + "\n\n";
+                rtb_ScoreCol.Text += score + "\n\n";
+                rtb_TimeCol.Text += dateTime + "\n\n";
             }
+        }
+
+        private void ClearScore()
+        {
+            rtb_SttCol.Clear();
+            rtb_NameCol.Clear();
+            rtb_ScoreCol.Clear();
+            rtb_TimeCol.Clear();
         }
 
         private void SortScoreDesc()
@@ -214,17 +244,58 @@ namespace Lab01
 
         private void Form_MainMenu_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
 
-            pnl_Buttons.Location = new Point(pnl_Buttons.Location.X, (this.Size.Height - pnl_Buttons.Size.Height) / 2);
-            pnl_WrappedTopic.Location = new Point(pnl_WrappedTopic.Location.X, (this.Size.Height - pnl_WrappedTopic.Size.Height) / 2);
-            pnl_WrappedPlayScreen.Location = new Point(pnl_WrappedPlayScreen.Location.X, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
-            pnl_WrappedScore.Location = new Point(pnl_WrappedScore.Location.X, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);
-            pnl_WrappedEnterName.Location = new Point(pnl_WrappedEnterName.Location.X, (this.Size.Height - pnl_WrappedEnterName.Size.Height) / 2);
+            wmp_Player.URL = "Sounds\\background.mp3";
 
-            rtb_Scores.Text += "Stt\t\tName\t\tScore\t\tTime\n";
+            pnl_Buttons.Location = new Point((this.Size.Width - pnl_Buttons.Size.Width) / 2, (this.Size.Height - pnl_Buttons.Size.Height) / 2);
+            pnl_WrappedTopic.Location = new Point((this.Size.Width - pnl_WrappedTopic.Size.Width) / 2, (this.Size.Height - pnl_WrappedTopic.Size.Height) / 2);
+            pnl_WrappedPlayScreen.Location = new Point((this.Size.Width - pnl_WrappedPlayScreen.Size.Width) / 2, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
+            pnl_WrappedScore.Location = new Point((this.Size.Width - pnl_WrappedScore.Size.Width) / 2, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);
+            pnl_WrappedEnterName.Location = new Point((this.Size.Width - pnl_WrappedEnterName.Size.Width) / 2, (this.Size.Height - pnl_WrappedEnterName.Size.Height) / 2);
+        }
+
+        private void btn_Mute_Click(object sender, EventArgs e)
+        {
+            btn_Mute.Visible = false;
+            btn_Unmute.Visible = true;
+            wmp_Player.settings.mute = true;
+        }
+
+        private void btn_Unmute_Click(object sender, EventArgs e)
+        {
+            btn_Mute.Visible = true;
+            btn_Unmute.Visible = false;
+            wmp_Player.settings.mute = false;
+        }
+
+        private void pic_Dictionary_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Visible = false;
+            pnl_Dictionary.Visible = true;
+        }
+
+
+
+        private void cbb_Dictionary_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string topicDir = "Images\\Topics\\";
+            string imageDir = topicDir + cbb_Dictionary.SelectedText;
+            foreach(string path in Directory.GetFiles(imageDir))
+            {
+                string[] token = path.Split('-', '.', ' ');
+                string eng = token[0];
+                string vie = token[1];
+                rtb_Dictionary.Text += String.Format("{0}{1}", eng, vie);
+            }
+        }
+
+        private void btn_DictionaryBack_Click(object sender, EventArgs e)
+        {
+            pnl_MainMenu.Visible = true;
+            pnl_Dictionary.Visible = false;
         }
     }
 }

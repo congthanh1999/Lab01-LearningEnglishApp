@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainMenu));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.pnl_MainMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_Buttons = new System.Windows.Forms.Panel();
@@ -83,9 +83,12 @@
             this.lbl_HighScore = new System.Windows.Forms.Label();
             this.pnl_Dictionary = new System.Windows.Forms.Panel();
             this.pnl_WrappedDictionary = new System.Windows.Forms.Panel();
-            this.rtb_Dictionary = new System.Windows.Forms.RichTextBox();
+            this.rtb_Eng = new System.Windows.Forms.RichTextBox();
             this.cbb_Dictionary = new System.Windows.Forms.ComboBox();
             this.btn_DictionaryBack = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.rtb_Vie = new System.Windows.Forms.RichTextBox();
+            this.lbl_Eng = new System.Windows.Forms.Label();
+            this.lbl_Vie = new System.Windows.Forms.Label();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Buttons.SuspendLayout();
@@ -111,13 +114,13 @@
             // pnl_MainMenu
             // 
             this.pnl_MainMenu.BackColor = System.Drawing.SystemColors.Window;
-            this.pnl_MainMenu.Controls.Add(this.pictureBox1);
             this.pnl_MainMenu.Controls.Add(this.pnl_Buttons);
+            this.pnl_MainMenu.Controls.Add(this.pictureBox1);
             this.pnl_MainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
-            this.pnl_MainMenu.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(955, 765);
             this.pnl_MainMenu.TabIndex = 2;
             // 
             // pictureBox1
@@ -126,7 +129,7 @@
             this.pictureBox1.Image = global::Lab01.Properties.Resources._2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1216, 371);
+            this.pictureBox1.Size = new System.Drawing.Size(955, 371);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -138,7 +141,7 @@
             this.pnl_Buttons.Controls.Add(this.btn_Exit);
             this.pnl_Buttons.Controls.Add(this.btn_StartGame);
             this.pnl_Buttons.Controls.Add(this.btn_HighScore);
-            this.pnl_Buttons.Location = new System.Drawing.Point(247, 407);
+            this.pnl_Buttons.Location = new System.Drawing.Point(116, 407);
             this.pnl_Buttons.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Buttons.Name = "pnl_Buttons";
             this.pnl_Buttons.Size = new System.Drawing.Size(766, 155);
@@ -293,7 +296,7 @@
             this.pnl_Topics.Location = new System.Drawing.Point(0, 0);
             this.pnl_Topics.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Topics.Name = "pnl_Topics";
-            this.pnl_Topics.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_Topics.Size = new System.Drawing.Size(955, 765);
             this.pnl_Topics.TabIndex = 3;
             this.pnl_Topics.Visible = false;
             // 
@@ -338,7 +341,7 @@
             this.pnl_WrappedTopic.Controls.Add(this.panel1);
             this.pnl_WrappedTopic.Controls.Add(this.lbl_ChooseTopic);
             this.pnl_WrappedTopic.Controls.Add(this.pnl_Fruit);
-            this.pnl_WrappedTopic.Location = new System.Drawing.Point(160, 100);
+            this.pnl_WrappedTopic.Location = new System.Drawing.Point(-69, 133);
             this.pnl_WrappedTopic.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_WrappedTopic.Name = "pnl_WrappedTopic";
             this.pnl_WrappedTopic.Size = new System.Drawing.Size(1005, 453);
@@ -491,7 +494,7 @@
             this.pnl_PlayScreen.Location = new System.Drawing.Point(0, 0);
             this.pnl_PlayScreen.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_PlayScreen.Name = "pnl_PlayScreen";
-            this.pnl_PlayScreen.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_PlayScreen.Size = new System.Drawing.Size(955, 765);
             this.pnl_PlayScreen.TabIndex = 4;
             this.pnl_PlayScreen.Visible = false;
             // 
@@ -539,7 +542,7 @@
             this.pnl_WrappedPlayScreen.Controls.Add(this.txt_Input);
             this.pnl_WrappedPlayScreen.Controls.Add(this.pic_PlayScreen);
             this.pnl_WrappedPlayScreen.Controls.Add(this.pic_WrongAnswer);
-            this.pnl_WrappedPlayScreen.Location = new System.Drawing.Point(198, 49);
+            this.pnl_WrappedPlayScreen.Location = new System.Drawing.Point(67, 49);
             this.pnl_WrappedPlayScreen.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_WrappedPlayScreen.Name = "pnl_WrappedPlayScreen";
             this.pnl_WrappedPlayScreen.Size = new System.Drawing.Size(873, 543);
@@ -665,7 +668,7 @@
             this.lbl_Score.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Score.AutoSize = true;
             this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Score.Location = new System.Drawing.Point(1176, 9);
+            this.lbl_Score.Location = new System.Drawing.Point(915, 9);
             this.lbl_Score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Score.Name = "lbl_Score";
             this.lbl_Score.Size = new System.Drawing.Size(29, 31);
@@ -677,7 +680,7 @@
             this.lbl_ScoreLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_ScoreLbl.AutoSize = true;
             this.lbl_ScoreLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ScoreLbl.Location = new System.Drawing.Point(1079, 9);
+            this.lbl_ScoreLbl.Location = new System.Drawing.Point(818, 9);
             this.lbl_ScoreLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_ScoreLbl.Name = "lbl_ScoreLbl";
             this.lbl_ScoreLbl.Size = new System.Drawing.Size(93, 31);
@@ -689,7 +692,7 @@
             this.pnl_WrappedEnterName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnl_WrappedEnterName.Controls.Add(this.txt_EnterName);
             this.pnl_WrappedEnterName.Controls.Add(this.lbl_EnterName);
-            this.pnl_WrappedEnterName.Location = new System.Drawing.Point(455, 222);
+            this.pnl_WrappedEnterName.Location = new System.Drawing.Point(324, 222);
             this.pnl_WrappedEnterName.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_WrappedEnterName.Name = "pnl_WrappedEnterName";
             this.pnl_WrappedEnterName.Size = new System.Drawing.Size(300, 94);
@@ -728,26 +731,26 @@
             this.txt_EnterName.Modified = false;
             this.txt_EnterName.Multiline = false;
             this.txt_EnterName.Name = "txt_EnterName";
-            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_EnterName.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.PaleTurquoise;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnIdleState = stateProperties24;
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_EnterName.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.PaleTurquoise;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnIdleState = stateProperties16;
             this.txt_EnterName.Padding = new System.Windows.Forms.Padding(3);
             this.txt_EnterName.PasswordChar = '\0';
             this.txt_EnterName.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -790,7 +793,7 @@
             this.pnl_EnterName.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnterName.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_EnterName.Name = "pnl_EnterName";
-            this.pnl_EnterName.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_EnterName.Size = new System.Drawing.Size(955, 765);
             this.pnl_EnterName.TabIndex = 6;
             this.pnl_EnterName.Visible = false;
             // 
@@ -803,7 +806,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 665);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1216, 100);
+            this.panel2.Size = new System.Drawing.Size(955, 100);
             this.panel2.TabIndex = 7;
             // 
             // wmp_Player
@@ -837,7 +840,7 @@
             this.btn_Mute.ImageSize = new System.Drawing.Size(60, 60);
             this.btn_Mute.ImageZoomSize = new System.Drawing.Size(100, 100);
             this.btn_Mute.InitialImage = ((System.Drawing.Image)(resources.GetObject("btn_Mute.InitialImage")));
-            this.btn_Mute.Location = new System.Drawing.Point(1116, 0);
+            this.btn_Mute.Location = new System.Drawing.Point(855, 0);
             this.btn_Mute.Name = "btn_Mute";
             this.btn_Mute.Rotation = 0;
             this.btn_Mute.ShowActiveImage = true;
@@ -873,7 +876,7 @@
             this.btn_Unmute.ImageSize = new System.Drawing.Size(60, 60);
             this.btn_Unmute.ImageZoomSize = new System.Drawing.Size(100, 100);
             this.btn_Unmute.InitialImage = ((System.Drawing.Image)(resources.GetObject("btn_Unmute.InitialImage")));
-            this.btn_Unmute.Location = new System.Drawing.Point(1116, 0);
+            this.btn_Unmute.Location = new System.Drawing.Point(855, 0);
             this.btn_Unmute.Name = "btn_Unmute";
             this.btn_Unmute.Rotation = 0;
             this.btn_Unmute.ShowActiveImage = true;
@@ -897,7 +900,7 @@
             this.pnl_HighScore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_HighScore.Location = new System.Drawing.Point(0, 0);
             this.pnl_HighScore.Name = "pnl_HighScore";
-            this.pnl_HighScore.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_HighScore.Size = new System.Drawing.Size(955, 765);
             this.pnl_HighScore.TabIndex = 10;
             this.pnl_HighScore.Visible = false;
             // 
@@ -948,7 +951,7 @@
             this.pnl_WrappedScore.Controls.Add(this.lbl_NameCol);
             this.pnl_WrappedScore.Controls.Add(this.lbl_SttCol);
             this.pnl_WrappedScore.Controls.Add(this.lbl_HighScore);
-            this.pnl_WrappedScore.Location = new System.Drawing.Point(148, 78);
+            this.pnl_WrappedScore.Location = new System.Drawing.Point(17, 78);
             this.pnl_WrappedScore.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_WrappedScore.Name = "pnl_WrappedScore";
             this.pnl_WrappedScore.Size = new System.Drawing.Size(985, 530);
@@ -1058,46 +1061,56 @@
             // 
             // pnl_Dictionary
             // 
+            this.pnl_Dictionary.BackColor = System.Drawing.SystemColors.Window;
             this.pnl_Dictionary.Controls.Add(this.pnl_WrappedDictionary);
             this.pnl_Dictionary.Controls.Add(this.btn_DictionaryBack);
             this.pnl_Dictionary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Dictionary.Location = new System.Drawing.Point(0, 0);
             this.pnl_Dictionary.Name = "pnl_Dictionary";
-            this.pnl_Dictionary.Size = new System.Drawing.Size(1216, 765);
+            this.pnl_Dictionary.Size = new System.Drawing.Size(955, 765);
             this.pnl_Dictionary.TabIndex = 11;
             this.pnl_Dictionary.Visible = false;
             // 
             // pnl_WrappedDictionary
             // 
-            this.pnl_WrappedDictionary.Controls.Add(this.rtb_Dictionary);
+            this.pnl_WrappedDictionary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pnl_WrappedDictionary.Controls.Add(this.lbl_Vie);
+            this.pnl_WrappedDictionary.Controls.Add(this.lbl_Eng);
+            this.pnl_WrappedDictionary.Controls.Add(this.rtb_Vie);
+            this.pnl_WrappedDictionary.Controls.Add(this.rtb_Eng);
             this.pnl_WrappedDictionary.Controls.Add(this.cbb_Dictionary);
-            this.pnl_WrappedDictionary.Location = new System.Drawing.Point(43, 118);
+            this.pnl_WrappedDictionary.Location = new System.Drawing.Point(34, 138);
             this.pnl_WrappedDictionary.Name = "pnl_WrappedDictionary";
-            this.pnl_WrappedDictionary.Size = new System.Drawing.Size(799, 430);
+            this.pnl_WrappedDictionary.Size = new System.Drawing.Size(845, 430);
             this.pnl_WrappedDictionary.TabIndex = 12;
             // 
-            // rtb_Dictionary
+            // rtb_Eng
             // 
-            this.rtb_Dictionary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtb_Eng.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtb_Dictionary.Location = new System.Drawing.Point(187, 3);
-            this.rtb_Dictionary.Name = "rtb_Dictionary";
-            this.rtb_Dictionary.Size = new System.Drawing.Size(609, 424);
-            this.rtb_Dictionary.TabIndex = 2;
-            this.rtb_Dictionary.Text = "";
+            this.rtb_Eng.BackColor = System.Drawing.SystemColors.Window;
+            this.rtb_Eng.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Eng.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Eng.Location = new System.Drawing.Point(236, 39);
+            this.rtb_Eng.Name = "rtb_Eng";
+            this.rtb_Eng.ReadOnly = true;
+            this.rtb_Eng.Size = new System.Drawing.Size(300, 388);
+            this.rtb_Eng.TabIndex = 2;
+            this.rtb_Eng.Text = "";
             // 
             // cbb_Dictionary
             // 
+            this.cbb_Dictionary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Dictionary.FormattingEnabled = true;
             this.cbb_Dictionary.Items.AddRange(new object[] {
             "Fruit",
             "Animal"});
-            this.cbb_Dictionary.Location = new System.Drawing.Point(3, 3);
+            this.cbb_Dictionary.Location = new System.Drawing.Point(3, 39);
             this.cbb_Dictionary.Name = "cbb_Dictionary";
-            this.cbb_Dictionary.Size = new System.Drawing.Size(178, 21);
+            this.cbb_Dictionary.Size = new System.Drawing.Size(227, 32);
             this.cbb_Dictionary.TabIndex = 1;
-            this.cbb_Dictionary.SelectedIndexChanged += new System.EventHandler(this.cbb_Dictionary_SelectedIndexChanged);
+            this.cbb_Dictionary.SelectionChangeCommitted += new System.EventHandler(this.cbb_Dictionary_SelectionChangeCommitted);
             // 
             // btn_DictionaryBack
             // 
@@ -1134,20 +1147,57 @@
             this.btn_DictionaryBack.ZoomSpeed = 10;
             this.btn_DictionaryBack.Click += new System.EventHandler(this.btn_DictionaryBack_Click);
             // 
+            // rtb_Vie
+            // 
+            this.rtb_Vie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtb_Vie.BackColor = System.Drawing.SystemColors.Window;
+            this.rtb_Vie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Vie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Vie.Location = new System.Drawing.Point(542, 39);
+            this.rtb_Vie.Name = "rtb_Vie";
+            this.rtb_Vie.ReadOnly = true;
+            this.rtb_Vie.Size = new System.Drawing.Size(300, 388);
+            this.rtb_Vie.TabIndex = 3;
+            this.rtb_Vie.Text = "";
+            // 
+            // lbl_Eng
+            // 
+            this.lbl_Eng.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Eng.AutoSize = true;
+            this.lbl_Eng.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Eng.Location = new System.Drawing.Point(232, 12);
+            this.lbl_Eng.Name = "lbl_Eng";
+            this.lbl_Eng.Size = new System.Drawing.Size(73, 24);
+            this.lbl_Eng.TabIndex = 4;
+            this.lbl_Eng.Text = "English";
+            // 
+            // lbl_Vie
+            // 
+            this.lbl_Vie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Vie.AutoSize = true;
+            this.lbl_Vie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vie.Location = new System.Drawing.Point(538, 12);
+            this.lbl_Vie.Name = "lbl_Vie";
+            this.lbl_Vie.Size = new System.Drawing.Size(110, 24);
+            this.lbl_Vie.TabIndex = 5;
+            this.lbl_Vie.Text = "Vietnamese";
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1216, 765);
+            this.ClientSize = new System.Drawing.Size(955, 765);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_Dictionary);
             this.Controls.Add(this.pnl_Topics);
             this.Controls.Add(this.pnl_PlayScreen);
             this.Controls.Add(this.pnl_HighScore);
             this.Controls.Add(this.pnl_EnterName);
             this.Controls.Add(this.pnl_MainMenu);
-            this.Controls.Add(this.pnl_Dictionary);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_MainMenu";
             this.Text = "Form1";
@@ -1179,6 +1229,7 @@
             this.pnl_WrappedScore.PerformLayout();
             this.pnl_Dictionary.ResumeLayout(false);
             this.pnl_WrappedDictionary.ResumeLayout(false);
+            this.pnl_WrappedDictionary.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1234,9 +1285,12 @@
         private Bunifu.UI.WinForms.BunifuImageButton btn_HighScore;
         private System.Windows.Forms.Panel pnl_Dictionary;
         private System.Windows.Forms.Panel pnl_WrappedDictionary;
-        private System.Windows.Forms.RichTextBox rtb_Dictionary;
+        private System.Windows.Forms.RichTextBox rtb_Eng;
         private System.Windows.Forms.ComboBox cbb_Dictionary;
         private Bunifu.UI.WinForms.BunifuImageButton btn_DictionaryBack;
+        private System.Windows.Forms.Label lbl_Vie;
+        private System.Windows.Forms.Label lbl_Eng;
+        private System.Windows.Forms.RichTextBox rtb_Vie;
     }
 }
 

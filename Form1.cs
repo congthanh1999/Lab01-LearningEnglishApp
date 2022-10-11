@@ -255,6 +255,7 @@ namespace Lab01
             pnl_WrappedPlayScreen.Location = new Point((this.Size.Width - pnl_WrappedPlayScreen.Size.Width) / 2, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
             pnl_WrappedScore.Location = new Point((this.Size.Width - pnl_WrappedScore.Size.Width) / 2, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);
             pnl_WrappedEnterName.Location = new Point((this.Size.Width - pnl_WrappedEnterName.Size.Width) / 2, (this.Size.Height - pnl_WrappedEnterName.Size.Height) / 2);
+            pnl_WrappedDictionary.Location = new Point((this.Size.Width - pnl_WrappedDictionary.Size.Width) / 2, (this.Size.Height - pnl_WrappedDictionary.Size.Height) / 2);
         }
 
         private void btn_Mute_Click(object sender, EventArgs e)
@@ -277,25 +278,30 @@ namespace Lab01
             pnl_Dictionary.Visible = true;
         }
 
-
-
-        private void cbb_Dictionary_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string topicDir = "Images\\Topics\\";
-            string imageDir = topicDir + cbb_Dictionary.SelectedText;
-            foreach(string path in Directory.GetFiles(imageDir))
-            {
-                string[] token = path.Split('-', '.', ' ');
-                string eng = token[0];
-                string vie = token[1];
-                rtb_Dictionary.Text += String.Format("{0}{1}", eng, vie);
-            }
-        }
-
         private void btn_DictionaryBack_Click(object sender, EventArgs e)
         {
             pnl_MainMenu.Visible = true;
             pnl_Dictionary.Visible = false;
+        }
+
+        private void cbb_Dictionary_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            rtb_Vie.Clear();
+            rtb_Eng.Clear();
+
+            string topicDir = "Images\\Topics\\";
+            string imageDir = topicDir + cbb_Dictionary.GetItemText(cbb_Dictionary.SelectedItem);
+            string[] files = Directory.GetFiles(imageDir);
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                string[] token = fileName.Split('-', '.');
+                string eng = token[0].Trim();
+                string vie = token[1];
+                rtb_Eng.Text += eng + "\n";
+                rtb_Vie.Text += vie + "\n";
+            }
         }
     }
 }

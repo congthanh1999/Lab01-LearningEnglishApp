@@ -63,4 +63,3 @@ D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Interop.WMPLauncher.dll
 D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\AxInterop.WMPLib.dll
 D:\A Jerry\GitHub\Lab01-LearningEnglishApp\bin\Debug\Interop.WMPLib.dll
 D:\A Jerry\GitHub\Lab01-LearningEnglishApp\bin\Debug\AxInterop.WMPLib.dll
-D:\A Jerry\GitHub\Lab01-LearningEnglishApp\obj\Debug\Lab01.Dictionary.resources

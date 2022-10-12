@@ -216,15 +216,18 @@ namespace Lab01
             foreach (DataRow dr in dt.Rows)
             {
                 i++;
-                string stt = dr["Stt"].ToString();
                 string name = dr["Name"].ToString();
                 string score = dr["Score"].ToString();
                 string dateTime = dr["Time"].ToString();
 
-                rtb_SttCol.Text += stt + "\n\n";
+                rtb_SttCol.Text += i.ToString() + "\n\n";
                 rtb_NameCol.Text += name + "\n\n";
                 rtb_ScoreCol.Text += score + "\n\n";
                 rtb_TimeCol.Text += dateTime + "\n\n";
+                if (i == 5)
+                {
+                    break;
+                }
             }
         }
 
@@ -244,13 +247,13 @@ namespace Lab01
 
         private void Form_MainMenu_Load(object sender, EventArgs e)
         {
-            //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
 
             wmp_Player.URL = "Sounds\\background.mp3";
 
-            pnl_Buttons.Location = new Point((this.Size.Width - pnl_Buttons.Size.Width) / 2, (this.Size.Height - pnl_Buttons.Size.Height) / 2);
+            pnl_Buttons.Location = new Point((this.Size.Width - pnl_Buttons.Size.Width) /2, (this.Size.Height - pnl_Buttons.Size.Height) * 3/4);
             pnl_WrappedTopic.Location = new Point((this.Size.Width - pnl_WrappedTopic.Size.Width) / 2, (this.Size.Height - pnl_WrappedTopic.Size.Height) / 2);
             pnl_WrappedPlayScreen.Location = new Point((this.Size.Width - pnl_WrappedPlayScreen.Size.Width) / 2, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
             pnl_WrappedScore.Location = new Point((this.Size.Width - pnl_WrappedScore.Size.Width) / 2, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);

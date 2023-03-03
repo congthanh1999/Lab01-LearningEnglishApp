@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MainMenu));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.pnl_MainMenu = new System.Windows.Forms.Panel();
             this.pnl_Buttons = new System.Windows.Forms.Panel();
             this.pic_Dictionary = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -66,7 +66,6 @@
             this.lbl_EnterName = new System.Windows.Forms.Label();
             this.pnl_EnterName = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.wmp_Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.btn_Mute = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btn_Unmute = new Bunifu.UI.WinForms.BunifuImageButton();
             this.pnl_HighScore = new System.Windows.Forms.Panel();
@@ -89,6 +88,7 @@
             this.rtb_Eng = new System.Windows.Forms.RichTextBox();
             this.cbb_Dictionary = new System.Windows.Forms.ComboBox();
             this.btn_DictionaryBack = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.wmp_Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnl_MainMenu.SuspendLayout();
             this.pnl_Buttons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,11 +104,11 @@
             this.pnl_WrappedEnterName.SuspendLayout();
             this.pnl_EnterName.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wmp_Player)).BeginInit();
             this.pnl_HighScore.SuspendLayout();
             this.pnl_WrappedScore.SuspendLayout();
             this.pnl_Dictionary.SuspendLayout();
             this.pnl_WrappedDictionary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp_Player)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_MainMenu
@@ -737,26 +737,26 @@
             this.txt_EnterName.Modified = false;
             this.txt_EnterName.Multiline = false;
             this.txt_EnterName.Name = "txt_EnterName";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_EnterName.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.PaleTurquoise;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_EnterName.OnIdleState = stateProperties12;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_EnterName.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.PaleTurquoise;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_EnterName.OnIdleState = stateProperties4;
             this.txt_EnterName.Padding = new System.Windows.Forms.Padding(4);
             this.txt_EnterName.PasswordChar = '\0';
             this.txt_EnterName.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -814,17 +814,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1273, 123);
             this.panel2.TabIndex = 7;
-            // 
-            // wmp_Player
-            // 
-            this.wmp_Player.Enabled = true;
-            this.wmp_Player.Location = new System.Drawing.Point(46, 20);
-            this.wmp_Player.Margin = new System.Windows.Forms.Padding(4);
-            this.wmp_Player.Name = "wmp_Player";
-            this.wmp_Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_Player.OcxState")));
-            this.wmp_Player.Size = new System.Drawing.Size(96, 47);
-            this.wmp_Player.TabIndex = 2;
-            this.wmp_Player.Visible = false;
             // 
             // btn_Mute
             // 
@@ -1208,6 +1197,17 @@
             this.btn_DictionaryBack.ZoomSpeed = 10;
             this.btn_DictionaryBack.Click += new System.EventHandler(this.btn_DictionaryBack_Click);
             // 
+            // wmp_Player
+            // 
+            this.wmp_Player.Enabled = true;
+            this.wmp_Player.Location = new System.Drawing.Point(46, 20);
+            this.wmp_Player.Margin = new System.Windows.Forms.Padding(4);
+            this.wmp_Player.Name = "wmp_Player";
+            this.wmp_Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_Player.OcxState")));
+            this.wmp_Player.Size = new System.Drawing.Size(96, 47);
+            this.wmp_Player.TabIndex = 2;
+            this.wmp_Player.Visible = false;
+            // 
             // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1216,12 +1216,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1273, 942);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnl_MainMenu);
             this.Controls.Add(this.pnl_Dictionary);
             this.Controls.Add(this.pnl_Topics);
             this.Controls.Add(this.pnl_PlayScreen);
             this.Controls.Add(this.pnl_HighScore);
             this.Controls.Add(this.pnl_EnterName);
+            this.Controls.Add(this.pnl_MainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_MainMenu";
@@ -1248,13 +1248,13 @@
             this.pnl_WrappedEnterName.PerformLayout();
             this.pnl_EnterName.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.wmp_Player)).EndInit();
             this.pnl_HighScore.ResumeLayout(false);
             this.pnl_WrappedScore.ResumeLayout(false);
             this.pnl_WrappedScore.PerformLayout();
             this.pnl_Dictionary.ResumeLayout(false);
             this.pnl_WrappedDictionary.ResumeLayout(false);
             this.pnl_WrappedDictionary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp_Player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1287,7 +1287,6 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuImageButton btn_Mute;
         private Bunifu.UI.WinForms.BunifuImageButton btn_Unmute;
-        private AxWMPLib.AxWindowsMediaPlayer wmp_Player;
         private Bunifu.UI.WinForms.BunifuTextBox txt_EnterName;
         private System.Windows.Forms.PictureBox pic_WrongAnswer;
         private System.Windows.Forms.PictureBox pic_CorrectAnswer;
@@ -1316,6 +1315,7 @@
         private System.Windows.Forms.Label lbl_Vie;
         private System.Windows.Forms.Label lbl_Eng;
         private System.Windows.Forms.RichTextBox rtb_Vie;
+        private AxWMPLib.AxWindowsMediaPlayer wmp_Player;
     }
 }
 

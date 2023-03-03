@@ -253,7 +253,7 @@ namespace Lab01
 
             wmp_Player.URL = "Sounds\\background.mp3";
 
-            pnl_Buttons.Location = new Point((this.Size.Width - pnl_Buttons.Size.Width) /2, (this.Size.Height - pnl_Buttons.Size.Height) * 3/4);
+            pnl_Buttons.Location = new Point((this.Size.Width - pnl_Buttons.Size.Width) / 2, (this.Size.Height - pnl_Buttons.Size.Height) * 3 / 4);
             pnl_WrappedTopic.Location = new Point((this.Size.Width - pnl_WrappedTopic.Size.Width) / 2, (this.Size.Height - pnl_WrappedTopic.Size.Height) / 2);
             pnl_WrappedPlayScreen.Location = new Point((this.Size.Width - pnl_WrappedPlayScreen.Size.Width) / 2, (this.Size.Height - pnl_WrappedPlayScreen.Size.Height) / 2);
             pnl_WrappedScore.Location = new Point((this.Size.Width - pnl_WrappedScore.Size.Width) / 2, (this.Size.Height - pnl_WrappedScore.Size.Height) / 2);
